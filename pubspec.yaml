@@ -1,6 +1,6 @@
 name: gauge_progress
 description: A customizable semi-circular gauge progress widget for Flutter with adjustable colors, stroke widths, and size.
-version: 1.0.0
+version: 1.0.1
 
 homepage: https://github.com/amityamsi/gauge_progress
 repository: https://github.com/amityamsi/gauge_progress

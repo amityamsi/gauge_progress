@@ -7,6 +7,29 @@ and this project adheres to Semantic Versioning.
 
 ---
 
+## [1.0.1] - 2026-02-24
+
+### 🔧 Improved
+
+- Enhanced dartdoc coverage for better pub.dev scoring
+- Improved public API documentation
+- Minor internal code refactoring
+- Optimized repaint conditions in `GaugePainter`
+
+### 🐛 Fixed
+
+- Minor percentage clamping edge cases
+- Stroke alignment consistency improvements
+- Label rendering spacing adjustment
+
+### 📚 Documentation
+
+- Updated README with clearer usage examples
+- Added preview GIF support instructions
+- Improved installation and feature descriptions
+
+---
+
 ## [1.0.0] - 2026-02-24
 
 ### 🚀 Initial Professional Release
@@ -31,7 +54,7 @@ and this project adheres to Semantic Versioning.
 - Built using CustomPainter
 - Optimized repaint logic
 - Lightweight & high-performance drawing
-- Clean and extensible GaugeType enum structure
+- Clean and extensible `GaugeType` enum structure
 
 ---
 
