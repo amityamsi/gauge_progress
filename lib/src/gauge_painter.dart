@@ -3,17 +3,59 @@ import 'package:flutter/material.dart';
 
 import 'gauge_type.dart';
 
+/// A custom painter responsible for rendering
+/// different gauge styles for [GaugeProgress].
+///
+/// This painter handles all drawing logic including:
+/// - Semi-circular gauges
+/// - Full circular gauges
+/// - Segmented gauges
+/// - Dashed gauges
+/// - Speedometer gauges
+/// - Multi-range gauges
+///
+/// The [percentage] value is normalized internally between 0 and 100.
 class GaugePainter extends CustomPainter {
+  /// The progress value of the gauge.
+  ///
+  /// Expected range: `0` to `100`.
   final double percentage;
+
+  /// The type of gauge to render.
   final GaugeType type;
+
+  /// Color used to paint the active progress arc.
+  ///
+  /// Ignored if [gradient] is provided.
   final Color progressColor;
+
+  /// Color used to paint the background arc.
   final Color backgroundColor;
+
+  /// Optional gradient applied to the progress arc.
+  ///
+  /// Overrides [progressColor] if provided.
   final Gradient? gradient;
+
+  /// Stroke width of the active progress arc.
   final double progressStrokeWidth;
+
+  /// Stroke width of the background arc.
   final double backgroundStrokeWidth;
+
+  /// Number of segments used for
+  /// [GaugeType.segmented] and [GaugeType.dashed].
   final int segments;
+
+  /// Colors used for the [GaugeType.multiRange] gauge.
+  ///
+  /// If null, default green/orange/red colors are used.
   final List<Color>? multiRangeColors;
 
+  /// Creates a [GaugePainter].
+  ///
+  /// All parameters are required and control
+  /// the visual rendering of the gauge.
   GaugePainter({
     required this.percentage,
     required this.type,
@@ -131,7 +173,12 @@ class GaugePainter extends CustomPainter {
       default:
         canvas.drawArc(rect, startAngle, sweepAngle, false, backgroundPaint);
         canvas.drawArc(
-            rect, startAngle, sweepAngle * normalized, false, progressPaint);
+          rect,
+          startAngle,
+          sweepAngle * normalized,
+          false,
+          progressPaint,
+        );
     }
   }
 
